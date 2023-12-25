@@ -1,0 +1,32 @@
+{
+  "name": "impactt-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev  -p 7033  ",
+    "build": "next build",
+    "start": "next start    -p 7033",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.7",
+    "next": "13.5.4",
+    "next-seo": "^6.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^4.11.0",
+    "react-phone-input-2": "^2.15.1",
+    "react-redux": "^8.1.3",
+    "redux-persist": "^6.0.0",
+    "sass": "^1.69.5",
+    "sharp": "^0.32.6",
+    "swiper": "^10.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10",
+    "postcss": "^8.4.32",
+    "postcss-loader": "^7.3.3",
+    "postcss-nested": "^6.0.1",
+    "tailwindcss": "^3"
+  }
+}
