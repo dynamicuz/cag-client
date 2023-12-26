@@ -20,11 +20,11 @@ const HomePage = () => {
    return (
       <>
          <NextSeo
-            title="impact"
-            description="impact the pleace for global anbinations people  "
+            title="cag"
+            description="cag consulting  "
          />
          <Head>
-            <meta name="keywords" content="impact, impactt, impacttuz" />
+            <meta name="keywords" content="cag, cagconsult, caguz" />
          </Head>
          <div className="flex flex-col pt-[17px]">
             <IntroSection />

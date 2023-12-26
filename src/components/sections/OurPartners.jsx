@@ -27,7 +27,7 @@ const IntroSection = () => {
       <div className=' max-w-[1440px] w-full mx-auto px-[24px] lg:px-[40px]  flex lg:flex-nowrap flex-wrap'>
         <div className="w-full  h-[696px] flex flex-col justify-between p-[40px] pb-[66px] rounded-[32px] bg-[url(/assets/images/png/partners-bg.png)] bg-center bg-cover bg-no-repeat">
           <div className=" border-[#EBECF1] border-b-[1px] pb-[32px]  flex justify-between w-full">
-            <h3 className="font-[700] text-[#FFFFFF] uppercase">Наша история</h3>
+            <h3 className="font-[700] text-[#FFFFFF] uppercase">Наши партнёры</h3>
             <p className="font-[500] text-[#FFFFFF] w-[520px]">Открывайте Визовые Горизонты с Нашими Американскими Партнёрами: Ключ к Успешному Оформлению Визы и Новым Возможностям в Соединённых Штатах</p>
           </div>  
       
