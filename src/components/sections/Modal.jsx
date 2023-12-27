@@ -17,18 +17,7 @@ export default function FormModal({isOpen, setIsOpen}) {
     const { localization } = Content[lang];
     function SubmitForm() {
         try {
-            fetch(`${BaseUrl}/lead/create`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    name: name,
-                    phone_number: number,
-                    status: "active",
-                    type: type.value,
-                })
-            }).then(() => {
+
                 fetch("https://api.aliinvest.uz/client", {
                     method: "POST",
                     headers: {
@@ -38,16 +27,15 @@ export default function FormModal({isOpen, setIsOpen}) {
                         name: name,
                         tel: "+" + number,
                         email: "",
-                        text: type.type,
-                        user_id: "-1001942822684",
+                        text: type,
+                        user_id: "-4017862255",
                     }),
                 })
-                    .catch((e) => {
-                        console.error(e.message);
-                    });
-            }).finally(() => {
+            .finally(() => {
                 setName("")
                 setNumber("")
+                setType("")
+                setIsOpen(false)
             }).catch((e) => {
                 console.error(e.message);
             })
@@ -71,11 +59,11 @@ export default function FormModal({isOpen, setIsOpen}) {
                     }}>
                     &times;
                 </button>
-                <form>
+                    <form onSubmit={SubmitForm}>
                     <label className='flex flex-col font-[700] text-[18px] pt-[20px]'>
                             {localization.home.form.name}
 
-                            <input placeholder={localization.home.form.name}
+                            <input required value={name} onChange={(e) => setName(e.target.value)} placeholder={localization.home.form.name}
  type="text" className='border  border-[#E0E3E6] mt-[6px] font-[400] rounded-[8px] h-[48px] px-[16px] py-[10px]' />
                     </label>
                     <label className='flex flex-col font-[700] text-[18px] pt-[20px]'>
@@ -97,7 +85,9 @@ export default function FormModal({isOpen, setIsOpen}) {
                     <label className='flex flex-col font-[700] text-[18px] pt-[20px]'>
                             {localization.home.form.country}
 
-                        <select defaultValue={""} className='border  border-[#E0E3E6] mt-[6px] font-[400] rounded-[8px] h-[48px] px-[16px] py-[10px]'>
+                            <select required value={type} onChange={(e) => {
+                                setType(e.target.value)
+                        }} className='border  border-[#E0E3E6] mt-[6px] font-[400] rounded-[8px] h-[48px] px-[16px] py-[10px]'>
                                 <option defaultChecked disabled value="">                   {localization.home.form.select}</option>
                                 <option value="usa">
                                     {localization.home.form.usa}
@@ -105,7 +95,7 @@ export default function FormModal({isOpen, setIsOpen}) {
                                 </option>
                         </select>
                     </label>
-                        <button className='font-oswald font-[500] w-full bg-[#205FFF] text-[#ffffff] py-[12px] rounded-[40px] mt-[30px]'>                   {localization.home.form.submit}
+                        <button type='submit' className='font-oswald font-[500] w-full bg-[#205FFF] text-[#ffffff] py-[12px] rounded-[40px] mt-[30px]'>                   {localization.home.form.submit}
 </button>
                 </form>
     </div>
