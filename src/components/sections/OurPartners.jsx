@@ -21,47 +21,37 @@ const IntroSection = () => {
   const { localization } = Content[lang];
 
 
+  const datas = [
+    {
+      title: "Intrax",
+      subtitle: "San-Francisco. California",
+      info: "600 California Street10th FloorSan Francisco, CA 94108",
+    },
+ 
+]
 
   return (
     <section >
       <div className=' max-w-[1440px] w-full mx-auto px-[24px] lg:px-[40px]  flex lg:flex-nowrap flex-wrap'>
-        <div className="w-full  h-[696px] flex flex-col justify-between p-[40px] pb-[66px] rounded-[32px] bg-[url(/assets/images/png/partners-bg.png)] bg-center bg-cover bg-no-repeat">
-          <div className=" border-[#EBECF1] border-b-[1px] pb-[32px]  flex justify-between w-full">
-            <h3 className="font-[700] text-[#FFFFFF] uppercase">Наши партнёры</h3>
-            <p className="font-[500] text-[#FFFFFF] w-[520px]">Открывайте Визовые Горизонты с Нашими Американскими Партнёрами: Ключ к Успешному Оформлению Визы и Новым Возможностям в Соединённых Штатах</p>
+        <div className="w-full min-h-[496px]  lg:h-[496px] flex flex-col justify-between p-[40px] pb-[66px] rounded-[32px] bg-[url(/assets/images/png/partners-bg.png)] bg-center bg-cover bg-no-repeat">
+          <div className=" border-[#EBECF1] border-b-[1px] pb-[32px]   flex-wrap gap-[15px]  flex justify-between w-full">
+            <h3 className="font-[700] text-[#FFFFFF] uppercase">{localization.home.partners.title}</h3>
+            <p className="font-[500] text-[#FFFFFF] w-[520px]">{localization.home.partners.subtitle}</p>
           </div>  
       
-          <div className='text-[#ffffff] flex gap-[40px]'>
-            <div>
-              <h3 className="font-[700] text-[50px] font-oswald uppercase">Intrax</h3>
-              <div className="flex gap-[12px] border-t-[1.5px] border-[rgba(235,236,241,0.40)] mt-[20px] pt-[20px]">
+          <div className='text-[#ffffff] flex  justify-center items-center md:pt-0 pt-[30px]'>
+           
+            {datas && datas.map((item, index) => (<div className='flex gap-[40px] sm:flex-row flex-col' key={index}>
+              <h3 className="font-[700] text-[30px] md:text-[50px] font-oswald uppercase">{item.title}</h3>
+              <div className="flex gap-[12px] border-t-[1.5px] sm:border-t-0 sm:border-l-[1.5px] pt-[20px] sm:pl-[20px] border-[rgba(235,236,241,0.40)] ">
                 {locationIcon}
-                <div className=''>
-                  <h4 className="font-[700] text-[18px]">San-Francisco. California</h4>
-                  <p className="">600 California Street10th FloorSan Francisco, CA 94108</p>
-               </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="font-[700] text-[50px] font-oswald uppercase">ERDT</h3>
-              <div className="flex gap-[12px] border-t-[1.5px] border-[rgba(235,236,241,0.40)] mt-[20px] pt-[20px]">
-                {locationIcon}
-                <div className=''>
-                  <h4 className="font-[700] text-[18px]">San-Francisco. California</h4>
-                  <p className="">600 California Street10th FloorSan Francisco, CA 94108</p>
+                <div>
+                  <h4 className="font-[700] text-[18px]">{item.subtitle}</h4>
+                  <p >{item.info}</p>
                 </div>
               </div>
-            </div>
-            <div>
-              <h3 className="font-[700] text-[50px] font-oswald uppercase">Life Adventures</h3>
-              <div className="flex gap-[12px] border-t-[1.5px] border-[rgba(235,236,241,0.40)] mt-[20px] pt-[20px]">
-                {locationIcon}
-                <div className=''>
-                  <h4 className="font-[700] text-[18px]">San-Francisco. California</h4>
-                  <p className="">600 California Street10th FloorSan Francisco, CA 94108</p>
-                </div>
-              </div>
-            </div>
+            </div>))}
+          
           </div>
         </div>
       </div>

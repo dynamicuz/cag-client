@@ -11,95 +11,65 @@ const OurTeamSection = () => {
     const { lang } = useSelector((state) => state.localiztion);
     const { localization } = Content[lang];
 
-    const data = [
-        {
-            district: "Ташкент",
-            address: "ул. Казыбек би 65,6этаж 605 каб. (угол ул. Назарбаева)",
-            workdays: {
-                days: "Понедельник — Суббота",
+    const data = {
+        ru:{
+        district: "Ташкент",
+            address: "ул. Кари Ниязова 4, Ташкент",
+                workdays: {
+            days: "Понедельник — Суббота",
                 hours: "С 10:00 до 18:00",
                 
             },
-            relaxdays: {
-                days: "Воскресенье",
+        relaxdays: {
+            days: "Воскресенье",
                 hours: "Выходной",
             },
-            user: {
-    
-    
-                name: "Алишер Номонов",
+        user: {
+            name: "Алишер Номонов",
                 phone: "+998 90 900 00 09",
-                email: "support@caguzbekistan.uz",
-                telegram: "t.me/alishercag",
+                    email: "caguzbekistan@gmail.com",
+                        telegram: "t.me/CAG_UZ",
             }
         },
-        {
-            district: "Фергана",
-            address: "ул. Казыбек би 65,6этаж 605 каб. (угол ул. Назарбаева)",
+        en: {
+            district: "Tashkent",
+            address: "Kari Niyazov street 4, Tashkent",
             workdays: {
-                days: "Понедельник — Суббота",
-                hours: "С 10:00 до 18:00",
+                days: "Monday - Saturday",
+                hours: "From 10:00 to 18:00",
 
             },
             relaxdays: {
-                days: "Воскресенье",
-                hours: "Выходной",
+                days: "Sunday",
+                hours: "Holiday",
             },
             user: {
-
-
-                name: "Алишер Номонов",
+                name: "Alisher Nomonov",
                 phone: "+998 90 900 00 09",
-                email: "support@caguzbekistan.uz",
-                telegram: "t.me/alishercag",
+                email: "caguzbekistan@gmail.com",
+                telegram: "t.me/CAG_UZ",
             }
         },
-        {
-            district: "Самарканд",
-            address: "ул. Казыбек би 65,6этаж 605 каб. (угол ул. Назарбаева)",
+        uz: {
+            district: "Toshkent",
+            address: "Toshkent, Qori Niyozov ko‘chasi, 4-uy",
             workdays: {
-                days: "Понедельник — Суббота",
-                hours: "С 10:00 до 18:00",
+                days: "dushanba - shanba",
+                hours: "10:00 dan 18:00 gacha",
 
             },
             relaxdays: {
-                days: "Воскресенье",
-                hours: "Выходной",
+                days: "yakshanba",
+                hours: "Bayram",
             },
             user: {
-
-
-                name: "Алишер Номонов",
+                name: "Alisher No'monov",
                 phone: "+998 90 900 00 09",
-                email: "support@caguzbekistan.uz",
-                telegram: "t.me/alishercag",
+                email: "caguzbekistan@gmail.com",
+                telegram: "t.me/CAG_UZ",
             }
         },
-        {
-            district: "Навои",
-            address: "ул. Казыбек би 65,6этаж 605 каб. (угол ул. Назарбаева)",
-            workdays: {
-                days: "Понедельник — Суббота",
-                hours: "С 10:00 до 18:00",
-
-            },
-            relaxdays: {
-                days: "Воскресенье",
-                hours: "Выходной",
-            },
-            user: {
-
-
-                name: "Алишер Номонов",
-                phone: "+998 90 900 00 09",
-                email: "support@caguzbekistan.uz",
-                telegram: "t.me/alishercag",
-            }
-        },
-            
-       
-    ]
-
+    }
 
     const locationIcon = <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_40_5679)">
@@ -139,36 +109,42 @@ const OurTeamSection = () => {
     return (
         <section >
             <div className=' max-w-[1440px] w-full mx-auto px-[24px] lg:px-[40px]  '>
-                <div className="border-[#EBECF1] border-b-[1px] pb-[32px]  flex justify-between w-full">
-                    <h3 className="font-[700] font-oswald text-[#7F8698] uppercase">Наша контакты</h3>
-                    <p className="font-[500] text-[#00032E] font-inter max-w-[670px]">Наши контакты: где каждый ваш вопрос встретит внимание, и мы рады создать с вами прочные связи для успешного сотрудничества.</p>
+                <div className="border-[#EBECF1] border-b-[1px] pb-[32px]  flex justify-between w-full   flex-wrap gap-[15px]">
+                    <h3 className="font-[700] font-oswald text-[#7F8698] uppercase">{localization.home.contact.title}</h3>
+                    <p className="font-[500] text-[#00032E] font-inter max-w-[670px]">{localization.home.contact.subtitle}</p>
                 </div>
                 <div className="flex items-end gap-[40px] pt-[56px] pb-[55px] ">
-                    <div className="grid grid-cols-4 text-[#00032E] gap-[20px]   ">
+                    <div className=" text-[#00032E] gap-[20px]   w-full">
                 
-                        {data && data?.map((item, index) => (<div className='font-inter border-b-[1.5px] border-[#EBECF1]' key={index}>
-                            <h3 className="font-[700] font-oswald text-[40px] text-[#00032E]  pb-[16px] uppercase">{item.district}</h3>
-                            <div className='flex flex-col gap-[8px] py-[16px] border-t-[1px] border-[#E2E8F0]'>
-                                    {locationIcon}
-                                <p className="font-inter">
-                                    {item.address}</p>
+                        {/* {data && data?.map((item, index) => ( */}
+                            <div className='grid  md:grid-cols-3 w-full font-inter ' >
+                           
+                            <div className='flex flex-col gap-[12px] py-[16px] border-[#E2E8F0]'>
+                                {locationIcon}
+                                <div>
+                                    <h3 className="font-[700] font-inter text-[16px]  text-[#00032E] uppercase">{data?.[lang].district}</h3>
+                                    <p className="font-inter">
+                                        {data?.[lang].address}</p>
+                              </div>
                            </div>
-                            <div className='flex flex-col gap-[8px] py-[16px] border-t-[1px] border-[#E2E8F0]'>
+                            <div className='flex flex-col gap-[8px] py-[16px] pl-[10px] md:border-l-[1px] md:border-t-0 border-t-[1px] border-[#E2E8F0]'>
                                 {clockIcon}
-                                <b className='font-[700] text-[15px]'>  {item.workdays.days}</b>
-                                <p>  {item.workdays.hours}</p>
-                                <b className='font-[700] text-[15px]'>  {item.relaxdays.days}</b>
-                                <p>  {item.relaxdays.hours}</p>
+                                <b className='font-[700] text-[15px]'>  {data?.[lang].workdays.days}</b>
+                                <p>  {data?.[lang].workdays.hours}</p>
+                                <b className='font-[700] text-[15px]'>  {data?.[lang].relaxdays.days}</b>
+                                <p>  {data?.[lang].relaxdays.hours}</p>
                             </div>
-                            <div className='flex flex-col gap-[8px] py-[16px] border-t-[1px] border-[#E2E8F0]'>
+                            <div className='flex flex-col gap-[8px] py-[16px] pl-[10px] md:border-l-[1px] border-t-[1px] md:border-t-0 border-[#E2E8F0]'>
                                     {userIcon}
                                 <b className="font-inter font-[700] pt-[4px] text-[15px]">
-                                    {item.user.name}</b>
-                                <p><a href="">{item.user.phone}</a></p>
-                                <p><a href="">{item.user.email}</a></p>
-                                <p><a href="">{item.user.telegram}</a></p>
+                                    {data?.[lang].user.name}</b>
+                                <p><a href="tel:+998339361212">+99833 936-12-12</a></p>
+                                <p><a href="tel:++998900016333">+99890 001-63-33</a></p>
+                                <p><a href="mailto:caguzbekistan@gmail.com">{data?.[lang].user.email}</a></p>
+                                <p><a href="https://t.me/CAG_UZ">{data?.[lang].user.telegram}</a></p>
                            </div>
-                        </div>))}
+                        </div>
+                        {/* ))} */}
                     
 
                     </div>

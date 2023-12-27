@@ -34,12 +34,12 @@ const CostsSection = () => {
     return (
         <section >
             <div className=' max-w-[1440px] w-full mx-auto px-[24px] lg:px-[40px]  '>
-                <div className="border-[#EBECF1] border-b-[1px] pb-[32px]  flex justify-between w-full">
-                    <h3 className="font-[700] font-oswald text-[#7F8698] uppercase">Стоимость участия</h3>
+                <div className="border-[#EBECF1] border-b-[1px] pb-[32px]  flex justify-between w-full   flex-wrap gap-[15px]">
+                  <h3 className="font-[700] font-oswald text-[#7F8698] uppercase">Стоимость участия</h3>
                     <p className="font-[500] text-[#00032E] font-inter max-w-[670px]">Для вашего удобства процесс оплаты был структурирован на четыре этапа, обеспечивая более удобное и пошаговое осуществление транзакции.</p>
                 </div>  
                 <div className="flex items-end gap-[40px] pt-[56px] pb-[80px] ">
-                    <div className="grid grid-cols-2 text-[#00032E] [&>*:nth-child(odd)]:border-r-0  [&>*:nth-child(1)]:border-b-0 [&>*:nth-child(2)]:border-b-0 [&>*:nth-child(1)]:bg-[#F8F8FA] [&>*:nth-child(4)]:bg-[#F8F8FA] ">
+                    <div className="grid md:grid-cols-2 text-[#00032E] [&>*:nth-child(odd)]:border-r-0  [&>*:nth-child(1)]:border-b-0 [&>*:nth-child(2)]:border-b-0 [&>*:nth-child(1)]:bg-[#F8F8FA] [&>*:nth-child(4)]:bg-[#F8F8FA] ">
 
                         {data && data?.map((item, index) => (<div className='flex flex-col justify-between h-[335px]  border-[1.5px] border-[#EBECF1] p-[32px]' key={index}>
                             <span className='w-[72px] h-[72px] rounded-full font-[600] text-[24px] text-[#ffffff] font-oswald flex items-center justify-center bg-[#205FFF]'>0{1+index}</span>

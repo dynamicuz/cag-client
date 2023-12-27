@@ -57,15 +57,15 @@ const StickyHeader = ({ type }) => {
         },
    
         {
-            path: "/#participants",
+            path: "/#reviews",
             name: localization.header.participants
         },
         {
-            path: "/#conditions",
+            path: "/#terms",
             name: localization.header.conditions
         },
         {
-            path: "/#contact",
+            path: "/#contacts",
             name: localization.header.contact
         },
        
@@ -111,17 +111,17 @@ const StickyHeader = ({ type }) => {
                                     <Link key={index} href={item?.path} className={`font-[600] capitalize  text-[#272A31]`}>{item?.name}</Link>
                                 ))}
                             </div>
-                            {/* <div className='  items-center gap-[24px] ml-[24px]'>
+                            <div className='  items-center gap-[24px] ml-[24px]'>
                                 <select value={lang} onChange={(e) => {
                                     dispatch(changeLanguage({ type: e.target.value }))
-                                }} className={` bg-transparent  text-[16px] capitalize  text-[#272A31] font-[600]  outline-none`
+                            }} className={` bg-transparent  text-[16px] uppercase  text-[#272A31] font-[600]  outline-none`
                                 } >
                                     <option className="bg-white text-black" value={lang} defaultChecked>{lang} </option>
                                     {langs ? langs.filter(el => el != lang).map((item, index) => (<option className="bg-white text-black" key={index} value={item}>{item}</option>
                                     ))
                                         : null}
                                 </select>
-                          </div> */}
+                          </div>
                         </div>
 
                     <div className='hidden lg:flex items-center'> 

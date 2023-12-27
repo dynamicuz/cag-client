@@ -43,9 +43,9 @@ const WorkAndTravel = () => {
     return (
         <section >
             <div className=' max-w-[1440px] w-full mx-auto pb-[80px] '>
-                <div className="border-[#EBECF1] border-b-[1px] pb-[32px]  flex justify-between w-full px-[24px] lg:px-[40px] ">
-                    <h3 className="font-[700] font-oswald text-[#7F8698] uppercase">Work & travel это</h3>
-                    <p className="font-[500] text-[#00032E] font-inter  max-w-[670px]">Одна из самых популярных программ студенческих обменов в мире. Программа международного обмена Work & Travel предоставляет студенту возможность легально поработать и попутешествовать в США на срок от одного до четырех месяцев (с 8 мая по 30 сентября)</p>
+                <div className="border-[#EBECF1] border-b-[1px] pb-[32px]  flex-wrap gap-[15px] flex justify-between w-full px-[24px] lg:px-[40px] ">
+                    <h3 className="font-[700] font-oswald text-[#7F8698] uppercase">{localization.home.workandtravel.title}</h3>
+                    <p className="font-[500] text-[#00032E] font-inter  max-w-[670px]">{localization.home.workandtravel.subtitle}</p>
                 </div>  
               
                 <div className="w-full flex items-start lg:pl-[40px] scrol-box overflow-x-auto gap-[10px] pt-[57px]">

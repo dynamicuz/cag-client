@@ -40,15 +40,15 @@ const OurTeamSection = () => {
     return (
         <section >
             <div className=' max-w-[1440px] w-full mx-auto px-[24px] lg:px-[40px]  '>
-                <div className="border-[#EBECF1] border-b-[1px] pb-[32px]  flex justify-between w-full">
-                    <h3 className="font-[700] font-oswald text-[#7F8698] uppercase">Наша команда</h3>
-                    <p className="font-[500] text-[#00032E] font-inter max-w-[670px]">Наша команда: объединенные целями, крепнущие связи — вместе к достижению выдающихся результатов!</p>
+                <div className="border-[#EBECF1] border-b-[1px] pb-[32px]  flex justify-between w-full   flex-wrap gap-[15px]">
+                    <h3 className="font-[700] font-oswald text-[#7F8698] uppercase">{localization.home.ourteam.title}</h3>
+                    <p className="font-[500] text-[#00032E] font-inter max-w-[670px]">{localization.home.ourteam.subtitle}</p>
                 </div>  
-                <div className="flex items-end gap-[40px] pt-[56px] pb-[80px] ">
-                    <div className="grid grid-cols-4 text-[#00032E] gap-[20px]   ">
+                <div className="flex items-end w-full gap-[40px] pt-[56px] pb-[80px] ">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 text-[#00032E] gap-[20px] w-full   ">
 
-                        {data && data?.map((item, index) => (<div className='flex flex-col  ' key={index}>
-                            <Image src={item.img} alt={item.title} width={325} height={413} />
+                        {data && data?.map((item, index) => (<div className='flex flex-col w-full ' key={index}>
+                            <Image src={item.img} alt={item.title} width={325} height={413} className='w-full h-[350px] md:h-auto' />
                             <h3 className="font-[600] font-oswald text-[24px] text-[#00032E]  pt-[16px] pb-[8px] uppercase">{item.title}</h3>
                             <p className="font-inter text-[18px] text-[#7F8698]">{item.subtitle}</p>
                         </div>))}    
