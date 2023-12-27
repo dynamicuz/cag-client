@@ -5,14 +5,12 @@ import { usePathname } from "next/navigation";
 
 
 
-export default function RootLayout({ children }) {
-
+export default function RootLayout({ children, setIsOpen }) {
    return (
       <>
-         
-  <Header type={"layout"} />
-               <main>{children}</main>
-               <Footer />
+         <Header type={"layout"} setIsOpen={setIsOpen} />
+         <main>{children}</main>
+         <Footer />
       </>
    );
 }

@@ -16,8 +16,7 @@ import FormModal from "@/components/sections/Modal";
 import Head from "next/head";
 import { NextSeo } from "next-seo";
 import { useState } from "react";
-const HomePage = () => {
-const [isOpen, setIsOpen] = useState(true)
+const HomePage = ({ isOpen, setIsOpen }) => {
    return (
       <>
          <NextSeo title="cag" description="cag consulting  " />
@@ -32,17 +31,17 @@ const [isOpen, setIsOpen] = useState(true)
             <WorkAndTravel />
          </div>
          <div id="aboutus" className=" pt-[24px] md:pt-[80px]">
-            <History />
+            <History setIsOpen={setIsOpen} />
          </div>
          <div id="mettingrooms" className="pt-[64px]">
             <OurPartners />
          </div>
          <div id="advantages" className="py-[80px]">
-            <Advantages />
+            <Advantages setIsOpen={setIsOpen} />
          </div>
 
          <div id="lead" className="py-[40px] md:pb-[80px]">
-            <ServiceSecton />
+            <ServiceSecton setIsOpen={setIsOpen} />
          </div>
          <div id="reviews" className="py-[80px]">
             <Review />
@@ -51,14 +50,14 @@ const [isOpen, setIsOpen] = useState(true)
             <CostsSection />
          </div> */}
          <div id="terms" className="t-[40px] md:pt-[80px] ">
-            <TermsSection />
+            <TermsSection setIsOpen={setIsOpen} />
             <Students />
          </div>
          <div id="review" className="py-[80px]">
-            <OurTeam />
+            <OurTeam setIsOpen={setIsOpen} />
          </div>
          <div id="contacts" className="py-[80px]">
-            <ContactSection />
+            <ContactSection setIsOpen={setIsOpen} />
          </div>
       </>
    );

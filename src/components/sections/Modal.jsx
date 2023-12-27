@@ -12,6 +12,7 @@ export default function FormModal({isOpen, setIsOpen}) {
     const [type, setType] = useState("");
     const [name, setName] = useState("");
     const [number, setNumber] = useState("");
+    const [status, setStatus] = useState(false);
     const { lang } = useSelector((state) => state.localiztion);
 
     const { localization } = Content[lang];
@@ -47,12 +48,14 @@ export default function FormModal({isOpen, setIsOpen}) {
 
     return (
         <>
-        { isOpen?<div className = 'backdrop'>
-           <div className='relative form__modal flex flex-col px-[20px] pt-[20px] pb-[20px]'>
+            {isOpen ? <div className='backdrop' onClick={() => {
+                setIsOpen(false)
+        }}>
+           <div onClick={(e) => e.stopPropagation()} className='mx-[10px] relative form__modal flex flex-col px-[15px] md:px-[20px] pt-[20px] pb-[20px]'>
                 <h3 className='font-oswald text-[30px] '>
                    {localization.home.form.title}
                 </h3>
-                <button className="absolute right-0 rounded-full w-[40px] h-[40]"
+                    <button className="absolute right-[5px] text-[25px] font-[700] flex items-center justify-center rounded-full top-[5px]  h-[35px] w-[35px] pb-[4px]  hover:bg-[#ccc]"
                     type="button"
                     onClick={() => {
                         setIsOpen(false)
@@ -60,20 +63,20 @@ export default function FormModal({isOpen, setIsOpen}) {
                     &times;
                 </button>
                     <form onSubmit={SubmitForm}>
-                    <label className='flex flex-col font-[700] text-[18px] pt-[20px]'>
+                    <label className='w-full flex flex-col font-[700] text-[18px] pt-[20px]'>
                             {localization.home.form.name}
 
                             <input required value={name} onChange={(e) => setName(e.target.value)} placeholder={localization.home.form.name}
- type="text" className='border  border-[#E0E3E6] mt-[6px] font-[400] rounded-[8px] h-[48px] px-[16px] py-[10px]' />
+                                type="text" className='border w-full  border-[#E0E3E6] mt-[6px] font-[400] rounded-[8px] h-[48px] px-[16px] py-[10px]' />
                     </label>
-                    <label className='flex flex-col font-[700] text-[18px] pt-[20px]'>
+                        <label className='flex flex-col w-full font-[700] text-[18px] pt-[20px]'>
                             {localization.home.form.phone}
 
                             <PhoneInput
                                 containerClass="bg-[#fff] w-[100px] border border-[#E0E3E6]  rounded-[8px] shadow-[0px,1px,2px,0px,rgba(13,16,23,0.06)] focus:outline-none text-[16px] "
                                 inputClass="w-full focus:outline-none border-0 bg-transparent"
                                 buttonStyle={{ display: "none", }}
-                                inputStyle={{ padding: "16px", width: "100%", fontWeight:"400", height: "100%", border: "none", backgroundColor: "transparent" }}
+                                inputStyle={{ padding: "16px", width: "100%", fontWeight:"400", fontSize:"16px", height: "100%", border: "none", backgroundColor: "transparent" }}
                                 country={"uz"}
                                 value={number}
                                 onChange={(e) => setNumber(e)}
@@ -82,12 +85,12 @@ export default function FormModal({isOpen, setIsOpen}) {
 
                             />
                     </label>
-                    <label className='flex flex-col font-[700] text-[18px] pt-[20px]'>
+                        <label className='flex flex-col font-[700] w-full text-[18px] pt-[20px]'>
                             {localization.home.form.country}
 
                             <select required value={type} onChange={(e) => {
                                 setType(e.target.value)
-                        }} className='border  border-[#E0E3E6] mt-[6px] font-[400] rounded-[8px] h-[48px] px-[16px] py-[10px]'>
+                            }} className='border  border-[#E0E3E6] mt-[6px] w-full font-[400] rounded-[8px] h-[48px] px-[16px] py-[10px]'>
                                 <option defaultChecked disabled value="">                   {localization.home.form.select}</option>
                                 <option value="usa">
                                     {localization.home.form.usa}

@@ -7,7 +7,7 @@ const BaseUrlLocal = process.env.NEXT_PUBLIC_ANALYTICS_BASEURLLOCAL;
 
 
 
-const OurTeamSection = () => {
+const OurTeamSection = ({ setIsOpen }) => {
     const { lang } = useSelector((state) => state.localiztion);
     const { localization } = Content[lang];
 
@@ -150,7 +150,9 @@ const OurTeamSection = () => {
                     </div>
                 </div>
             
-                <button className="mx-auto border-[2px] border-[#00032E] flex items-center justify-center gap-[8px] rounded-full py-[16px] px-[24px] font-[500] text-[20px] text-[#00032E]">{localization.header.btn}
+                <button onClick={() => {
+                    setIsOpen(true)
+                }} className="mx-auto border-[2px] border-[#00032E] flex items-center justify-center gap-[8px] rounded-full py-[16px] px-[24px] font-[500] text-[20px] text-[#00032E]">{localization.header.btn}
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_33_5477)">
                             <path d="M5 12H19" stroke="#00031A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

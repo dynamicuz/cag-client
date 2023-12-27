@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Content from "@/Localization/Content";
 const BaseUrlLocal = process.env.NEXT_PUBLIC_ANALYTICS_BASEURLLOCAL;
 
-const StickyHeader = ({ type }) => {
+const StickyHeader = ({ setIsOpen }) => {
  
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -126,11 +126,13 @@ const StickyHeader = ({ type }) => {
 
                     <div className='hidden lg:flex items-center'> 
                         
-                        <Link href="/#lead" className='flex items-center justify-center font-[500] text-[#ffffff] h-[45px] px-[32px] bg-[#205FFF] rounded-[40px] font-oswald'>{ localization.header.btn}</Link>
+                        <button onClick={() => {
+                            setIsOpen(true)
+                        }} className='flex items-center justify-center font-[500] text-[#ffffff] h-[45px] px-[32px] bg-[#205FFF] rounded-[40px] font-oswald'>{ localization.header.btn}</button>
 
      </div>
                     <div className="lg:hidden ">
-                        <button className="w-[30px] text-gray-600 hover:text-gray-800" onClick={toggleMenu}>
+                        <button  className="w-[30px] text-gray-600 hover:text-gray-800" onClick={toggleMenu}>
                             {isMenuOpen ? <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21.25 8.75L8.75 21.25M8.75 8.75L21.25 21.25" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg> :

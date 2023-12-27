@@ -7,34 +7,78 @@ const BaseUrlLocal = process.env.NEXT_PUBLIC_ANALYTICS_BASEURLLOCAL;
 
 
 
-const OurTeamSection = () => {
+const OurTeamSection = ({ setIsOpen }) => {
     const { lang } = useSelector((state) => state.localiztion);
     const { localization } = Content[lang];
 
-    const data = [
-        {
-            img: "/assets/images/png/team-1.png",
-            title: "Нуржан Букетов",
-            subtitle:"Директор CAG Work&Travel"
+    const data = {
+        uz:[ {
+            img: "/assets/images/png/team-2.png",
+            title: "Ibrohim",
+            subtitle: "Ijtimoiy tarmoq menenjeri"
         },
-        {
-            img: "/assets/images/png/team-1.png",
-            title: "Жамиля Куатбек",
-               subtitle: "Координатор вг. Алматы"
-        },
-        {
-            img: "/assets/images/png/team-1.png",
-
-            title: "Анель Жанаева",
-            subtitle: "Координатор вг. Астана",
-        },
-        {
-            img: "/assets/images/png/team-1.png",
-
-            title: "Дурбек Таиров",
-            subtitle: "Координатор вг. Шымкент",
-        },
-      ]
+    {
+        img: "/assets/images/png/team-1.jpg",
+            title: "Davronbek",
+                subtitle: "Koordinator"
+    },
+    {
+        img: "/assets/images/png/team-3.jpg",
+            title: "Shaxboz",
+                subtitle: "Koordinator"
+    },
+    {
+        img: "/assets/images/png/team-4.jpg",
+            title: "Jahongir",
+                subtitle: "Koordinator"
+    },
+],
+        ru: [
+            {
+                img: "/assets/images/png/team-2.png",
+                title: "Ибрахим",
+                subtitle: "Менеджер социальных сетей"
+            },
+            {
+                img: "/assets/images/png/team-1.jpg",
+                title: "Давронбек",
+                subtitle: "Координатор"
+            },
+            {
+                img: "/assets/images/png/team-3.jpg",
+                title: "Шахбоз",
+                subtitle: "Координатор"
+            },
+            {
+                img: "/assets/images/png/team-4.jpg",
+                title: "Джахонгир",
+                subtitle: "Координатор"
+            },
+        
+        ],
+        en: [
+            {
+                img: "/assets/images/png/team-2.png",
+                title: "Ibrohim",
+                subtitle: "Social Media Manager"
+            },
+            {
+                img: "/assets/images/png/team-1.jpg",
+                title: "Davronbek",
+                subtitle: "Coordinator"
+            },
+            {
+                img: "/assets/images/png/team-3.jpg",
+                title: "Shaxboz",
+                subtitle: "Coordinator"
+            },
+            {
+                img: "/assets/images/png/team-4.jpg",
+                title: "Jahongir",
+                subtitle: "Coordinator"
+            },
+        ],
+    }
 
 
     return (
@@ -47,8 +91,8 @@ const OurTeamSection = () => {
                 <div className="flex items-end w-full gap-[40px] pt-[56px] pb-[80px] ">
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 text-[#00032E] gap-[20px] w-full   ">
 
-                        {data && data?.map((item, index) => (<div className='flex flex-col w-full ' key={index}>
-                            <Image src={item.img} alt={item.title} width={325} height={413} className='w-full h-[350px] md:h-auto' />
+                        {data && data[lang || "ru"]?.map((item, index) => (<div className='flex flex-col w-full   ' key={index}>
+                            <Image src={item.img} alt={item.title} width={325} height={350} className='w-full h-[350px] object-cover' />
                             <h3 className="font-[600] font-oswald text-[24px] text-[#00032E]  pt-[16px] pb-[8px] uppercase">{item.title}</h3>
                             <p className="font-inter text-[18px] text-[#7F8698]">{item.subtitle}</p>
                         </div>))}    
@@ -57,7 +101,9 @@ const OurTeamSection = () => {
 </div>
                 </div>
                   
-            <button className="mx-auto border-[2px] border-[#00032E] flex items-center justify-center gap-[8px] rounded-full py-[16px] px-[24px] font-[500] text-[20px] text-[#00032E]">{localization.header.btn}
+                <button onClick={() => {
+                    setIsOpen(true)
+                }} className="mx-auto border-[2px] border-[#00032E] flex items-center justify-center gap-[8px] rounded-full py-[16px] px-[24px] font-[500] text-[20px] text-[#00032E]">{localization.header.btn}
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_33_5477)">
                         <path d="M5 12H19" stroke="#00031A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
