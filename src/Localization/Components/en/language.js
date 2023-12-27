@@ -80,6 +80,7 @@ const header = {
          country: "Country of Study",
          select: "In which country do you want to study?",
          usa: "USA",
+         submited: "Ma'lumotlaringiz muvaffaqiyatli yuborildi",
       },
    },
 };

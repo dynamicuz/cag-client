@@ -80,6 +80,7 @@ const header = {
          country: "O'qish mamlakati",
          select: "Qaysi mamlakatda o'qishni xohlaysiz?",
          usa: "AQSh",
+         submited: "Your information has been sent successfully",
       },
    },
 };
