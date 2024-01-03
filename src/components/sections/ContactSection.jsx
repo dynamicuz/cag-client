@@ -25,8 +25,10 @@ const OurTeamSection = ({ setIsOpen }) => {
                 hours: "Выходной",
             },
         user: {
-            name: "Алишер Номонов",
-                phone: "+998 90 900 00 09",
+            name: "Шахбоз Мирзаев",
+            name2: "Довронбек Мирзаев",
+            phone: "+998(33)936-12-12",
+            phone2: "+998(90)001-63-33",
                     email: "caguzbekistan@gmail.com",
                         telegram: "t.me/CAG_UZ",
             }
@@ -44,8 +46,11 @@ const OurTeamSection = ({ setIsOpen }) => {
                 hours: "Holiday",
             },
             user: {
-                name: "Alisher Nomonov",
-                phone: "+998 90 900 00 09",
+                name: "Shaxboz Mirzaev",
+                name2: "Davronbek Mirzaev",
+                phone: "+998(33)936-12-12",
+                phone2: "+998(90)001-63-33",
+
                 email: "caguzbekistan@gmail.com",
                 telegram: "t.me/CAG_UZ",
             }
@@ -63,8 +68,10 @@ const OurTeamSection = ({ setIsOpen }) => {
                 hours: "Bayram",
             },
             user: {
-                name: "Alisher No'monov",
-                phone: "+998 90 900 00 09",
+                name: "Shaxboz Mirzaev",
+                name2: "Davronbek Mirzaev",
+                phone: "+998(33)936-12-12",
+                phone2: "+998(90)001-63-33",
                 email: "caguzbekistan@gmail.com",
                 telegram: "t.me/CAG_UZ",
             }
@@ -139,6 +146,8 @@ const OurTeamSection = ({ setIsOpen }) => {
                                 <b className="font-inter font-[700] pt-[4px] text-[15px]">
                                     {data?.[lang].user.name}</b>
                                 <p><a href="tel:+998339361212">+99833 936-12-12</a></p>
+                                <b className="font-inter font-[700] pt-[4px] text-[15px]">
+                                    {data?.[lang].user.name2}</b>
                                 <p><a href="tel:++998900016333">+99890 001-63-33</a></p>
                                 <p><a href="mailto:caguzbekistan@gmail.com">{data?.[lang].user.email}</a></p>
                                 <p><a href="https://t.me/CAG_UZ">{data?.[lang].user.telegram}</a></p>

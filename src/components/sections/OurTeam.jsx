@@ -12,41 +12,37 @@ const OurTeamSection = ({ setIsOpen }) => {
     const { localization } = Content[lang];
 
     const data = {
-        uz:[ {
-            img: "/assets/images/png/team-2.PNG",
-            title: "Ibrohim",
-            subtitle: "Ijtimoiy tarmoq menenjeri"
+        uz: [
+            {
+            img: "/assets/images/png/team-1.jpg",
+                title: "Shaxboz",
+                subtitle: "Bosh direktor"
         },
-    {
-        img: "/assets/images/png/team-1.jpg",
-            title: "Davronbek",
+            {
+                img: "/assets/images/png/team-3.jpg",
+                title: "Davronbek",
                 subtitle: "Koordinator"
-    },
-    {
-        img: "/assets/images/png/team-3.jpg",
-            title: "Shaxboz",
-                subtitle: "Koordinator"
-    },
+            },
     {
         img: "/assets/images/png/team-4.jpg",
-            title: "Jahongir",
-                subtitle: "Koordinator"
+        title: "Jahongir",
+        subtitle: "Koordinator"
     },
+    {
+    img: "/assets/images/png/team-2.PNG",
+    title: "Ibrohim",
+    subtitle: "Ijtimoiy tarmoq menenjeri"
+},
 ],
         ru: [
             {
-                img: "/assets/images/png/team-2.PNG",
-                title: "Ибрахим",
-                subtitle: "Менеджер социальных сетей"
-            },
-            {
                 img: "/assets/images/png/team-1.jpg",
-                title: "Давронбек",
-                subtitle: "Координатор"
+                title: "Шахбоз",
+                subtitle: "Генеральный директор"
             },
             {
                 img: "/assets/images/png/team-3.jpg",
-                title: "Шахбоз",
+                title: "Давронбек",
                 subtitle: "Координатор"
             },
             {
@@ -54,28 +50,33 @@ const OurTeamSection = ({ setIsOpen }) => {
                 title: "Джахонгир",
                 subtitle: "Координатор"
             },
+            {
+                img: "/assets/images/png/team-2.PNG",
+                title: "Ибрахим",
+                subtitle: "Менеджер социальных сетей"
+            },
         
         ],
         en: [
             {
-                img: "/assets/images/png/team-2.PNG",
-                title: "Ibrohim",
-                subtitle: "Social Media Manager"
-            },
-            {
                 img: "/assets/images/png/team-1.jpg",
-                title: "Davronbek",
-                subtitle: "Coordinator"
+                title: "Shaxboz",
+                subtitle: "CEO"
             },
             {
                 img: "/assets/images/png/team-3.jpg",
-                title: "Shaxboz",
+                title: "Davronbek",
                 subtitle: "Coordinator"
             },
             {
                 img: "/assets/images/png/team-4.jpg",
                 title: "Jahongir",
                 subtitle: "Coordinator"
+            },
+            {
+                img: "/assets/images/png/team-2.PNG",
+                title: "Ibrohim",
+                subtitle: "Social Media Manager"
             },
         ],
     }

@@ -83,14 +83,14 @@ const StickyHeader = ({ setIsOpen }) => {
                         <div className="text-lg md:text-xl font-semibold">
                             <Link href="/">
                                <Image
-                                    src={`/assets/images/logos/logo.png`}
+                                src={`${BaseUrlLocal}/assets/images/logos/logo.png`}
                                     alt=" Logo"
                                     width={63}
                                     height={34}
                                     priority
                                 /></Link>
                         </div>
-                        <div className='flex items-center  '>
+                        <div className=' flex items-center  '>
                             
                             <div className={`absolute  capitalize w-full mb-[50px] overflow-y-auto  left-0 top-[62px] shadow-md bg-white flex lg:hidden text-center text-[20px] font-[700] pt-[40px]  space-y-[30px]  ${isMenuOpen ? ' h-[95vh] pb-[70px] flex flex-col' : 'hidden'}`}>
                             
@@ -111,7 +111,7 @@ const StickyHeader = ({ setIsOpen }) => {
                                     <Link key={index} href={item?.path} className={`font-[600] capitalize  text-[#272A31]`}>{item?.name}</Link>
                                 ))}
                             </div>
-                            <div className='  items-center gap-[24px] ml-[24px]'>
+                        <div className='hidden lg:flex  items-center gap-[24px] ml-[24px]'>
                                 <select value={lang} onChange={(e) => {
                                     dispatch(changeLanguage({ type: e.target.value }))
                             }} className={` bg-transparent  text-[16px] uppercase  text-[#272A31] font-[600]  outline-none`
@@ -131,7 +131,18 @@ const StickyHeader = ({ setIsOpen }) => {
                         }} className='flex items-center justify-center font-[500] text-[#ffffff] h-[45px] px-[32px] bg-[#205FFF] rounded-[40px] font-oswald'>{ localization.header.btn}</button>
 
      </div>
-                    <div className="lg:hidden ">
+                    <div className="lg:hidden flex gap-[20px] ">
+                        <div className='flex  items-center gap-[24px] ml-[24px]'>
+                            <select value={lang} onChange={(e) => {
+                                dispatch(changeLanguage({ type: e.target.value }))
+                            }} className={` bg-transparent  text-[16px] uppercase  text-[#272A31] font-[600]  outline-none`
+                            } >
+                                <option className="bg-white text-black" value={lang} defaultChecked>{lang} </option>
+                                {langs ? langs.filter(el => el != lang).map((item, index) => (<option className="bg-white text-black" key={index} value={item}>{item}</option>
+                                ))
+                                    : null}
+                            </select>
+                        </div>
                         <button  className="w-[30px] text-gray-600 hover:text-gray-800" onClick={toggleMenu}>
                             {isMenuOpen ? <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21.25 8.75L8.75 21.25M8.75 8.75L21.25 21.25" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

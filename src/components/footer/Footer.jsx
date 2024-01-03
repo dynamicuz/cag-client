@@ -45,7 +45,7 @@ export default function Footer() {
                 <div className="w-full flex lg:justify-between items-center flex-wrap justify-center gap-[30px]">
                     <Link href="/">
                         <Image
-                            src={`/assets/images/logos/logo.png`}
+                            src={`${BaseUrlLocal}/assets/images/logos/logo.png`}
                             alt=" Logo"
                             width={63}
                             height={34}

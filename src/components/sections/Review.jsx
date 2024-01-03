@@ -101,7 +101,7 @@ const WorkAndTravel = () => {
                     <div className='h-[520px] hidden md:block'>
                         <Image src={BaseUrlLocal+data[lang || "ru"][activeItem].img} alt='image' width={669} height={520}  className='h-full object-fill'/>
            </div>
-                    <div className='flex flex-col justify-between h-[520px]'>
+                    <div className='flex flex-col justify-between sm:h-[520px]'>
                         <div>
                             <div className='flex items-center gap-[17px] pb-[24px]'>
                                 <Image src={BaseUrlLocal+data[lang || "ru"][activeItem].avatar} alt='image' width={72} height={72} className='rounded-full h-[72px] object-cover ' />
