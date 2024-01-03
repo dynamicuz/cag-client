@@ -51,7 +51,7 @@ const WorkAndTravel = () => {
                 <div className="w-full flex items-start lg:pl-[40px] scrol-box overflow-x-auto gap-[10px] pt-[57px]">
 
                         {data && data?.map((item, index) => (<>
-                            <Image src={item.img} alt='image' width={item.width} height={item.height}  />
+                            <Image src={`${BaseUrlLocal}${item.img}`} alt='image' width={item.width} height={item.height}  />
                         </>))}    
                         
                 </div>

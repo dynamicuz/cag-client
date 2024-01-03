@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
    images: {
-      domains: ["impact.dynamicsoft.uz", "impactapi.dynamicsoft.uz"],
+      domains: ["cag.dynamicsoft.uz"],
 
       // remotePatterns: [
       //    {

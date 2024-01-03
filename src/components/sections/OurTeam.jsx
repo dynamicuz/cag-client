@@ -58,7 +58,7 @@ const OurTeamSection = ({ setIsOpen }) => {
         ],
         en: [
             {
-                img: "/assets/images/png/team-2.png",
+                img: "/assets/images/png/team-2.PNG",
                 title: "Ibrohim",
                 subtitle: "Social Media Manager"
             },
@@ -92,7 +92,7 @@ const OurTeamSection = ({ setIsOpen }) => {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 text-[#00032E] gap-[20px] w-full   ">
 
                         {data && data[lang || "ru"]?.map((item, index) => (<div className='flex flex-col w-full   ' key={index}>
-                            <Image src={item.img} alt={item.title} width={325} height={350} className='w-full h-[350px] object-cover' />
+                            <Image src={`${BaseUrlLocal}${item.img}`} alt={item.title} width={325} height={350} className='w-full h-[350px] object-cover' />
                             <h3 className="font-[600] font-oswald text-[24px] text-[#00032E]  pt-[16px] pb-[8px] uppercase">{item.title}</h3>
                             <p className="font-inter text-[18px] text-[#7F8698]">{item.subtitle}</p>
                         </div>))}    
