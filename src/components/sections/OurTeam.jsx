@@ -13,7 +13,7 @@ const OurTeamSection = ({ setIsOpen }) => {
 
     const data = {
         uz:[ {
-            img: "/assets/images/png/team-2.png",
+            img: "/assets/images/png/team-2.PNG",
             title: "Ibrohim",
             subtitle: "Ijtimoiy tarmoq menenjeri"
         },
@@ -35,7 +35,7 @@ const OurTeamSection = ({ setIsOpen }) => {
 ],
         ru: [
             {
-                img: "/assets/images/png/team-2.png",
+                img: "/assets/images/png/team-2.PNG",
                 title: "Ибрахим",
                 subtitle: "Менеджер социальных сетей"
             },
